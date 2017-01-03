@@ -28,7 +28,7 @@ public class Board {
 	
 	//places mines on the board
 	public void placeMines() {
-		int placed = 0;	//number of mines placed
+		int placed = 0;		//number of mines placed
 		int y = 0;		//vertical coordinate
 		int x = 0;		//horizontal coordinate
 		
@@ -72,14 +72,14 @@ public class Board {
 	
 	//uncovers the cell to reveal its value (-1 for mine or # for adj mines)
 	public void uncover(int y, int x) {
-		if (values[y][x] == -1)	{//if cell contains a mine, game is over
+		if (values[y][x] == -1)	{	//if cell contains a mine, game is over
 			endGame = true;
 			board[y][x] = true;
 		}
 		else if (values[y][x] == 0) {	//if cell has no adj mines, uncover adj cells
 			if (!board[y][x]) {
-				board[y][x] = true;		//cell is uncovered
-				uncovered++;	//not a mine, increment # of non-mines uncovered
+				board[y][x] = true;	//cell is uncovered
+				uncovered++;		//not a mine, increment # of non-mines uncovered
 			}
 			for (int a = -1; a <= 1; a++) {
 				if (y + a >= 0 && y + a <= this.height - 1) {	//keeps check within height
@@ -95,8 +95,8 @@ public class Board {
 		}
 		else
 			if (!board[y][x]) {
-				board[y][x] = true;		//cell is uncovered
-				uncovered++;	//not a mine, increment # of non-mines uncovered
+				board[y][x] = true;	//cell is uncovered
+				uncovered++;		//not a mine, increment # of non-mines uncovered
 			}
 	}
 	
